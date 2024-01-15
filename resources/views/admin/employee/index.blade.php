@@ -39,7 +39,7 @@
         </tr>
         @foreach ($rows as $i => $item)
         <tr>
-            <td>{{ $i+1 }}</td>
+            <td>{{ $loop->iteration}}</td>
             <td>{{ $item->first_name }} {{ $item->last_name }}</td>
             <td>{{ $item->email }}</td>
             <td>{{ $item->phone }}</td>

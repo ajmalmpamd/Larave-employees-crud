@@ -57,7 +57,7 @@
                                 <label for="logo">Logo</label>
                                 @if ($company->logo)
                                     
-                                        <img src="{{ asset('storage/' . $company->logo) }}" alt="Current Logo" class="img-thumbnail m-3" style="width: 100px;">
+                                        <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }}" class="img-thumbnail m-3" style="width: 100px;">
                                 @endif
                                 <input type="file" name="logo" id="logo" class="form-control-file">
                                 <span class="text-danger">{{ $errors->first('logo') }}</span>

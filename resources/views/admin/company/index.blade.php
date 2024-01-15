@@ -31,14 +31,20 @@
           <table class="table table-bordered">
         <tr>
             <th>No</th>
+            <th>Logo</th>
             <th>Name</th>
             <th>Email</th>
             <th>Website</th>
-            <th width="280px">Action</th>
+            <th >Action</th>
         </tr>
         @foreach ($rows as $i => $item)
         <tr>
-            <td>{{ $i+1 }}</td>
+            <td>{{$loop->iteration}}</td>
+            <td>
+                @if ($item->logo && Storage::disk('public')->exists($item->logo))                                    
+                <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}" class="img-thumbnail m-1" style="width: 75px;">
+                @endif
+            </td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->email }}</td>
             <td>{{ $item->website }}</td>
